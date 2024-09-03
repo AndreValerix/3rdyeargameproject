@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0a8rkf6ilnax"]
+
+[ext_resource type="Script" path="res://MainMenu.gd" id="1_3yeur"]
+[ext_resource type="Texture2D" uid="uid://dliitrkhlmit6" path="res://art/illustrations/I2.png" id="2_scyky"]
+[ext_resource type="AudioStream" uid="uid://j1r7v7mni7cn" path="res://music/dark-progression-109308.mp3" id="3_j14cv"]
+[ext_resource type="AudioStream" uid="uid://c80m8r86qo7iy" path="res://music/soundEffect/90s-game-ui-6-185099.mp3" id="4_ngqt3"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+script = ExtResource("1_3yeur")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(650, 354)
+scale = Vector2(0.692593, 0.692593)
+texture = ExtResource("2_scyky")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -114.0
+offset_top = -155.0
+offset_right = 115.0
+offset_bottom = -54.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Start"
+
+[node name="OptionsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Options"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[node name="bgm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_j14cv")
+volume_db = -15.0
+autoplay = true
+
+[node name="buttonClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ngqt3")
+volume_db = -5.0
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

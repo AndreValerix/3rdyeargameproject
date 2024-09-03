@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1cdjhtba50vs"]
+
+[ext_resource type="Texture2D" uid="uid://b1tmb7ol5ci5g" path="res://art/illustrations/G2.png" id="1_uqgp0"]
+[ext_resource type="Texture2D" uid="uid://dyang0si4n558" path="res://art/sprites/Amy/amydefault.png" id="2_fdwrq"]
+[ext_resource type="AudioStream" uid="uid://wbjja36hb8lk" path="res://music/jazz-cafe-143906.mp3" id="3_kfxqe"]
+
+[node name="VNintro" type="Node2D"]
+
+[node name="backgroundPic" type="Sprite2D" parent="."]
+position = Vector2(702, 365)
+scale = Vector2(0.834245, 0.834245)
+texture = ExtResource("1_uqgp0")
+
+[node name="AmyDefault" type="Sprite2D" parent="."]
+position = Vector2(272, 312)
+scale = Vector2(1.36, 1.36)
+texture = ExtResource("2_fdwrq")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_kfxqe")
+volume_db = -20.0
